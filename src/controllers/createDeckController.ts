@@ -7,6 +7,7 @@ export async function createDeckController(req: Request, res: Response) {
   });
   const createdDeck = await newDeck.save();
   try {
+    console.log(createdDeck);
     return res.status(201).json(createdDeck);
   } catch (error) {
     res.status(400).json({

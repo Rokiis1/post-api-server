@@ -1,9 +1,11 @@
+import express, { Application } from "express";
 import cors from "cors";
 import path from "path";
-import express, { Application } from "express";
 import deckRoutes from "../routes/deckRoutes";
+import { createDeckController } from "../controllers/createDeckController";
 
 function createServer() {
+  const router = express();
   const app: Application = express();
 
   app.use(express.urlencoded({ extended: false }));
@@ -29,7 +31,11 @@ function createServer() {
     }
   });
 
-  app.use("/api/v1/logs", deckRoutes);
+  app.use("/api/v1/decks", deckRoutes);
+
+  router.get("/ping", (req, res, next) =>
+    res.status(200).json({ hello: "world" })
+  );
 
   return app;
 }
