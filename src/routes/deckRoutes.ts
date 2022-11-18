@@ -8,10 +8,10 @@ import { deleteCardOnDeckController } from "../controllers/deleteCardOnDeckContr
 
 const router: Router = Router();
 
-router.get("/get", getDecksController);
-router.post("/post", createDeckController);
-router.delete("/delete/:deckId", deleteDeckController);
+router.get("/get/decks", getDecksController);
+router.post("/post/decks", createDeckController);
 router.get("/get/:deckId", getDeckController);
+router.delete("/delete/:deckId", deleteDeckController);
 router.post("/post/:deckId/cards", createCardForDeckController);
 router.delete("/delete/:deckId/cards/:index", deleteCardOnDeckController);
 
