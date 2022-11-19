@@ -8,11 +8,11 @@ import { deleteCardOnDeckController } from "../controllers/deleteCardOnDeckContr
 
 const router: Router = Router();
 
-router.get("/get/decks", getDecksController);
-router.post("/post/decks", createDeckController);
-router.get("/get/:deckId", getDeckController);
-router.delete("/delete/:deckId", deleteDeckController);
-router.post("/post/:deckId/cards", createCardForDeckController);
-router.delete("/delete/:deckId/cards/:index", deleteCardOnDeckController);
+router.get("/posts", getDecksController);
+router.post("/post", createDeckController);
+router.get("/post/:postId", getDeckController);
+router.delete("/post/:postId", deleteDeckController);
+router.post("/post/:postId/cards", createCardForDeckController);
+router.delete("/post/:postId/cards/:cardId", deleteCardOnDeckController);
 
 export default router;

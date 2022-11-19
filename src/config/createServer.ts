@@ -20,7 +20,7 @@ function createServer() {
 
   // Routes
 
-  app.use("/api/v1/card", deckRoutes);
+  app.use("/api/v1/", deckRoutes);
 
   app.use("/", root);
 
