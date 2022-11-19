@@ -1,18 +1,18 @@
 import { Router } from "express";
-import { createDeckController } from "../controllers/createDeckController";
-import { getDecksController } from "../controllers/getDecksController";
-import { deleteDeckController } from "../controllers/deleteDeckController";
-import { getDeckController } from "../controllers/getDeckController";
-import { createCardForDeckController } from "../controllers/createCardForDeckController";
-import { deleteCardOnDeckController } from "../controllers/deleteCardOnDeckController";
+import { createPostController } from "../controllers/createPostController";
+import { getPostsController } from "../controllers/getPostsController";
+import { deletePostController } from "../controllers/deletePostController";
+import { getPostController } from "../controllers/getPostController";
+import { createCardForPostController } from "../controllers/createCardForPostController";
+import { deleteCardOnPostController } from "../controllers/deleteCardOnPostController";
 
 const router: Router = Router();
 
-router.get("/posts", getDecksController);
-router.post("/post", createDeckController);
-router.get("/post/:postId", getDeckController);
-router.delete("/post/:postId", deleteDeckController);
-router.post("/post/:postId/cards", createCardForDeckController);
-router.delete("/post/:postId/cards/:cardId", deleteCardOnDeckController);
+router.get("/posts", getPostsController);
+router.post("/posts", createPostController);
+router.get("/posts/:postId", getPostController);
+router.delete("/posts/:postId", deletePostController);
+router.post("/posts/:postId/cards", createCardForPostController);
+router.delete("/posts/:postId/cards/:cardId", deleteCardOnPostController);
 
 export default router;
