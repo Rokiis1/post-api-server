@@ -1,6 +1,6 @@
 import express, { Application } from "express";
 import cors from "cors";
-import deckRoutes from "../routes/deckRoutes";
+import deckRoutes from "../routes/postRoutes";
 import root from "../routes/root";
 
 function createServer() {
